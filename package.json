@@ -1,0 +1,24 @@
+{
+  "name": "halvas",
+  "version": "1.0.0",
+  "description": "halvas designworks site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "halvas designworks",
+    "graphic design",
+    "new media",
+    "media",
+    "web development",
+    "development",
+    "full stack",
+    "stack"
+  ],
+  "author": "tvr",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}

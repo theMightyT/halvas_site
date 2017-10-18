@@ -1,7 +1,7 @@
 $(function () {
 
 	$(window).stellar({
-		horizontalScrolling: false 
+		horizontalScrolling: false
 	});
 
 	// Custom Scrollbar
@@ -11,7 +11,7 @@ $(function () {
 		cursorborderradius: '0'
 	});
 
-	$('.main-nav a:not(.dropdown-toggle)').bind('click', function(event) {
+	$('.main-nav a:not(.dropdown-toggle), .explore-but').bind('click', function(event) {
 		var $anchor = $(this);
 
 		$('html, body').stop().animate({
@@ -39,7 +39,7 @@ $(function () {
 
 	$('[data-toggle="tooltip"]').tooltip();
 
-	
+
 
 
     function home_height () {
@@ -88,7 +88,7 @@ $(function () {
 	});
 
 
-	
+
 
 
 	$(".testimonials-carousel ul").owlCarousel({
@@ -110,7 +110,7 @@ $(function () {
     ////// mailchimp //////
     $(".subscribe-form").ajaxChimp({
         callback: mcCallback,
-        url: "http://cantothemes.us8.list-manage2.com/subscribe/post?u=37a0cb83e98c8633253ad0acd&id=03d8ef0996" // Replace your mailchimp post url inside double quote "".  
+        url: "http://cantothemes.us8.list-manage2.com/subscribe/post?u=37a0cb83e98c8633253ad0acd&id=03d8ef0996" // Replace your mailchimp post url inside double quote "".
     });
 
     function mcCallback (res) {
@@ -130,17 +130,17 @@ $(function () {
           selector.addClass('formFieldError',500);
           return false;
         } else {
-          selector.removeClass('formFieldError',500); 
+          selector.removeClass('formFieldError',500);
           return true;
         }
     }
     function validateEmail(email) {
         var regex = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
         if (!regex.test(email.val())) {
-          email.addClass('formFieldError',500); 
+          email.addClass('formFieldError',500);
           return false;
         } else {
-          email.removeClass('formFieldError',500); 
+          email.removeClass('formFieldError',500);
           return true;
         }
     }
@@ -158,7 +158,7 @@ $(function () {
       if(!checkEmpty($this.find('#mssg'))) {
         result=false;
       }
-      
+
       if(result==false) {
         return false;
       }
@@ -168,25 +168,27 @@ $(function () {
       var data = $this.serialize();
 
       $.ajax({
-          url: "sender.php", 
-          type: "POST",        
-          data: data,     
+          url: "sender.php",
+          type: "POST",
+          data: data,
           cache: false,
           success: function (html) {
           	console.log(html);
               if (html==1) {
-                  $('#result-message').addClass('alert alert-success').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success!</strong> Message Send. We will contact with you soon.').delay(500).slideDown(500).delay(10000).slideUp('slow');
+                  $('#result-message').addClass('alert alert-success').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success!</strong> Message Sent. We will contact you shortly.').delay(500).slideDown(500).delay(5000).slideUp('slow');
+
+									$('#fname, #email, #mssg, #subj').val(null);
 
                   $btn.button('reset');
-                  
+
               } else {
-                  $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Message Sending Error! Please try again').delay(500).slideDown(500).delay(10000).slideUp('slow');
+                  $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong>Error Sending Message! Please try again').delay(500).slideDown(500).delay(5000).slideUp('slow');
                   $btn.button('reset');
               }
           },
           error: function (a, b) {
             if (b == 'error') {
-              $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Message Sending Error! Please try again').delay(500).slideDown(500).delay(10000).slideUp('slow');
+              $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Error Sending Message! Please try again.').delay(500).slideDown(500).delay(5000).slideUp('slow');
             };
             $btn.button('reset');
           }
