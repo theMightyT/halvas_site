@@ -12,7 +12,7 @@
     border-color: rgba(255, 255, 255, 0.3);
   }
 
-  .hero-title { font-size: 55px }
+  .hero-title { font-size: 55px; margin-top: 0; }
 }
 
 .btn-main {
@@ -22,7 +22,17 @@
 }
 
 .section-title  {
-    p { color: rgba(255, 80, 6, 0.81); }
+    p { color: rgba(255, 80, 6, 0.81); line-height: 40px; }
 
     h3 { margin-bottom: 0; color: rgba(76, 76, 76, 0.65); }
+}
+
+.contact-message {
+  height: 125px !important;
+}
+
+.st-feature {
+  .st-feature-title { font-size: 20px; margin-bottom: 0; }
+  p { font-size: 13px; line-height: 20px; padding: 0 5px; }
+  img { width: 100%; }
 }
