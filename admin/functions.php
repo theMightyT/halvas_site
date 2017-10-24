@@ -27,7 +27,8 @@ function getPortfolioContent($tableName, $category, $conn) {
 }
 
 function getLightboxContent($tableName, $image, $conn) {
-	try $result = $conn->query("SELECT 1 FROM $tableName WHERE id='$image'");
+	try {
+		$result = $conn->query("SELECT 1 FROM $tableName WHERE id='$image'");
 
 	return ($result->rowCount() > 0) ? $result : false;
 	} catch(Exception $e) {
