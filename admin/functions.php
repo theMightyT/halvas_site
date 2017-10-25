@@ -16,9 +16,9 @@ function connect($config) {
 	}
 }
 
-function getPortfolioContent($tableName, $category, $conn) {
+function getPortfolioContent($tableName, $conn) {
 	try {
-		$result = $conn->query("SELECT * FROM $tableName WHERE category='$category'");
+		$result = $conn->query("SELECT * FROM $tableName");
 
 		return ($result->rowCount() > 0) ? $result : false;
 	} catch(Exception $e) {

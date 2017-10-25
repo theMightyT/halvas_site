@@ -3,10 +3,16 @@
 
  $conn = connect($config);
 
+ $table = $_GET['$tableName'];
+
  if (isset($_GET['$image'])) {
-   echo 'get one';
+   // get the lightbox image data
+   $targetImage = $_GET['$image'];
+
+   $result = getLightboxContent($table, $targetImage, $conn);
+   echo json_encode($result->fetch(PDO::FETCH_ASSOC));
  } else {
-   
-   echo 'get all';
+   $result = getPortfolioContent($table, $conn);
+   echo json_encode($result->fetchAll());
  }
 ?>

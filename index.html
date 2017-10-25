@@ -27,6 +27,19 @@
 	</head>
 	<body data-spy="scroll" data-target=".main-nav">
 
+		<!-- template for portfolio stuff -->
+		<template id="portTemplate">
+			<figure class="portfolio-item" data-groups='["print"]'>
+				<img src="photos/portfolio.jpg" alt=""/>
+				<figcaption>
+					<h2>Nice <span>Lily</span></h2>
+					<p>Lily likes to play with crayons and pencils</p>
+					<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
+				</figcaption>
+			</figure>
+		</template>
+		<!-- end template -->
+
 		<header class="st-navbar">
 			<nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
 				<div class="container"><!-- Brand and toggle get grouped for better mobile display -->
@@ -195,22 +208,22 @@
 				<div class="row">
 					<div class="col-md-12 no-padding ">
 						<div class="section-title st-center">
-							<h3>What we have done</h3>
+							<h3>Our Work</h3>
 							<p>Avocent deditum long</p>
 						</div>
 						<div class="filter mb40">
 							<form id="filter">
 							<fieldset class="group">
 								<label class="btn btn-default btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>
-								<label class="btn btn-default"><input type="radio" name="filter" value="photography">Print Design</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="print">Print Design</label>
 								<label class="btn btn-default"><input type="radio" name="filter" value="design">Web Design</label>
-								<label class="btn btn-default"><input type="radio" name="filter" value="codding">Development</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="development">Development</label>
 							</fieldset>
 							</form><!-- #filter -->
 						</div><!-- .filter .mb40 -->
 
-						<div class="grid">
-							<figure class="portfolio-item" data-groups='["photography"]'>
+						<div class="grid portfolio-container">
+							<!-- <figure class="portfolio-item" data-groups='["print"]'>
 								<img src="photos/portfolio.jpg" alt=""/>
 								<figcaption>
 									<h2>Nice <span>Lily</span></h2>
@@ -226,7 +239,7 @@
 									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
 								</figcaption>
 							</figure>
-							<figure class="portfolio-item" data-groups='["photography"]'>
+							<figure class="portfolio-item" data-groups='["print"]'>
 								<img src="photos/portfolio3.jpg" alt=""/>
 								<figcaption>
 									<h2>Nice <span>Lily</span></h2>
@@ -250,7 +263,7 @@
 									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
 								</figcaption>
 							</figure>
-							<figure class="portfolio-item" data-groups='["photography"]'>
+							<figure class="portfolio-item" data-groups='["print"]'>
 								<img src="photos/portfolio6.jpg" alt=""/>
 								<figcaption>
 									<h2>Nice <span>Lily</span></h2>
@@ -258,7 +271,7 @@
 									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
 								</figcaption>
 							</figure>
-							<figure class="portfolio-item" data-groups='["codding"]'>
+							<figure class="portfolio-item" data-groups='["development"]'>
 								<img src="photos/portfolio7.jpg" alt=""/>
 								<figcaption>
 									<h2>Nice <span>Lily</span></h2>
@@ -266,7 +279,7 @@
 									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
 								</figcaption>
 							</figure>
-							<figure class="portfolio-item" data-groups='["photography"]'>
+							<figure class="portfolio-item" data-groups='["print"]'>
 								<img src="photos/portfolio8.jpg" alt=""/>
 								<figcaption>
 									<h2>Nice <span>Lily</span></h2>
@@ -274,7 +287,7 @@
 									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
 								</figcaption>
 							</figure>
-							<figure class="portfolio-item" data-groups='["codding"]'>
+							<figure class="portfolio-item" data-groups='["development"]'>
 								<img src="photos/portfolio9.jpg" alt=""/>
 								<figcaption>
 									<h2>Nice <span>Lily</span></h2>
@@ -282,7 +295,7 @@
 									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
 								</figcaption>
 							</figure>
-							<figure class="portfolio-item" data-groups='["codding"]'>
+							<figure class="portfolio-item" data-groups='["development"]'>
 								<img src="photos/portfolio10.jpg" alt=""/>
 								<figcaption>
 									<h2>Nice <span>Lily</span></h2>
@@ -305,7 +318,7 @@
 									<p>Lily likes to play with crayons and pencils</p>
 									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
 								</figcaption>
-							</figure>
+							</figure> -->
 						</div>
 
 					</div>
