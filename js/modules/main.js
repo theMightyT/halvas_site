@@ -39,11 +39,16 @@ var halvas = {
   },
 
   renderPortfolioImages : function(data) {
+   
     let portfolioContainer = document.querySelector('.portfolio-container'),
         portfolioTemplate = document.querySelector('#portTemplate').content;
 
     // grab the contents of the template and render the data for each one
     data.forEach(function(item, index) {
+
+       // temp push into vue vm to see if things populate
+      halvasVM.vm.portfolioItems.push(item);
+      
       // show the content
       //console.log(item, index); data-groups='["print"]'
       //<figcaption>
@@ -71,6 +76,6 @@ var halvas = {
     // run script here to grab portfolio images?
     // would have to get them all from the portfolio table and then load the thumbnail images; then grab the larger images and description on a click. is this the best way to go? that way I can maintain and add to the portfolio stuff without having to  manually upate the site...
 
-    halvas.retrievePortfolioImages('getAll', renderPortfolioImages);
+    halvas.retrievePortfolioImages('getAll', halvas.renderPortfolioImages);
   }
 }

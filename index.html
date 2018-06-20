@@ -18,12 +18,18 @@
 
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/overrides.css" rel="stylesheet">
+
+		<!-- vue for data binding instead of templating with jQuery -->
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.min.js"></script>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+
 	</head>
 	<body data-spy="scroll" data-target=".main-nav">
 
@@ -222,103 +228,17 @@
 							</form><!-- #filter -->
 						</div><!-- .filter .mb40 -->
 
-						<div class="grid portfolio-container">
-							<!-- <figure class="portfolio-item" data-groups='["print"]'>
-								<img src="photos/portfolio.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["design"]'>
-								<img src="photos/portfolio2.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["print"]'>
-								<img src="photos/portfolio3.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["design"]'>
-								<img src="photos/portfolio4.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["design"]'>
-								<img src="photos/portfolio5.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["print"]'>
-								<img src="photos/portfolio6.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["development"]'>
-								<img src="photos/portfolio7.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["print"]'>
-								<img src="photos/portfolio8.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["development"]'>
-								<img src="photos/portfolio9.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["development"]'>
-								<img src="photos/portfolio10.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["design"]'>
-								<img src="photos/portfolio11.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure>
-							<figure class="portfolio-item" data-groups='["design"]'>
-								<img src="photos/portfolio12.jpg" alt=""/>
-								<figcaption>
-									<h2>Nice <span>Lily</span></h2>
-									<p>Lily likes to play with crayons and pencils</p>
-									<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-								</figcaption>
-							</figure> -->
+						<div class="grid portfolio-container" id="app">
+							<div v-for="item in portfolioItems">
+								<figure class="portfolio-item" data-groups='["design"]'>
+									<img src="photos/portfolio2.jpg" alt=""/>
+									<figcaption>
+										<h2>Nice <span>Lily</span></h2>
+										<p>Lily likes to play with crayons and pencils</p>
+										<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
+									</figcaption>
+								</figure>
+							</div>
 						</div>
 
 					</div>
@@ -451,6 +371,12 @@
 		<script src="js/owl.carousel.js"></script>
 		<script src="js/jquery.ajaxchimp.min.js"></script>
 		<script src="js/script.js"></script>
+		<script src="js/modules/main_VM.js"></script>
 		<script src="js/modules/main.js"></script>
+		
+
+		<script>
+			halvas.init();
+		</script>
 	</body>
 </html>
