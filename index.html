@@ -193,9 +193,9 @@
 							</form><!-- #filter -->
 						</div><!-- .filter .mb40 -->
 
-						<div class="grid portfolio-container" id="app">
-							<div v-for="item in portfolioItems">
-								<figure class="portfolio-item" :data-groups="'[' + item.category + ']'"> <!--'["{{item.category}}"]' -->
+						<div id="app">
+							<div class="grid portfolio-container">
+								<figure  v-for="item in portfolioItems" class="portfolio-item" :data-groups="'[' + item.category + ']'"> 
 									<img :src="'images/portThumbs/' + item.path + '.jpg'" alt=""/>
 									<figcaption>
 										<h2>Nice <span>Lily</span></h2>
@@ -205,7 +205,6 @@
 								</figure> 
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>

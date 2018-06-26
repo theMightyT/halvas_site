@@ -47,7 +47,7 @@ var halvas = {
     data.forEach(function(item, index) {
 
        // temp push into vue vm to see if things populate
-      halvasVM.vm.portfolioItems.push(item);
+      //halvasVM.vm.portfolioItems.push(item);
       
       // show the content
       //console.log(item, index); data-groups='["print"]'
