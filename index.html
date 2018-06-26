@@ -194,8 +194,8 @@
 						</div><!-- .filter .mb40 -->
 
 						<div class="grid portfolio-container" id="app">
-							<!-- <div v-for="item in portfolioItems">
-								<figure class="portfolio-item" :data-groups="item.category"> '["{{item.category}}"]'
+							<div v-for="item in portfolioItems">
+								<figure class="portfolio-item" :data-groups="'[' + item.category + ']'"> <!--'["{{item.category}}"]' -->
 									<img :src="'images/portThumbs/' + item.path + '.jpg'" alt=""/>
 									<figcaption>
 										<h2>Nice <span>Lily</span></h2>
@@ -203,7 +203,7 @@
 										<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
 									</figcaption>
 								</figure> 
-							</div> -->
+							</div>
 						</div>
 
 					</div>
@@ -337,10 +337,10 @@
 		<script src="js/jquery.ajaxchimp.min.js"></script>
 		<script src="js/script.js"></script>
 		<script src="js/modules/main_VM.js"></script>
-		<script src="js/modules/main.js"></script>
+		<!-- <script src="js/modules/main.js"></script> -->
 
-		<!-- <script>
+		<script>
 			halvasVM.vm.init();
-		</script> -->
+		</script>
 	</body>
 </html>

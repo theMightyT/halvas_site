@@ -42,15 +42,20 @@ const halvasVM = {
                 data.forEach(function(item, index) {
                     halvasVM.vm.portfolioItems.push(item);
                 });
+                // initShuffle lives in script.js
+                initShuffle();
             },
             
-            init : function() {
+            init : function(cb) {
                 // stub
                 console.log('welcome');
             
                 this.retrievePortfolioImages('getAll', this.renderPortfolioImages);
-            }
 
+                // if (cb) {
+                //     cb();
+                // }
+            }
         }
     }) // end vue VM
 };
