@@ -8,7 +8,7 @@
 		//
 		// remote dev
 		  // 'username' => 'halvas',
-		  // 'password' => 'hopapolong',
+		  // 'password' => 'hopalong',
 		  // 'DB_host'  => 'internal-db.s45380.gridserver.com',
 		  // 'DB_basename' => 'db45380_halvas01'
 	);

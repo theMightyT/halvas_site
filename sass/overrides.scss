@@ -1,3 +1,18 @@
+.home { 
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.95)
+  ),
+  
+    url(../images/fabian-grohs-672016-unsplash.jpg);
+    
+    background-repeat: no-repeat, no-repeat;
+
+    background-position: top left, fixed;
+    background-size: cover, cover;
+}
+
 .home .hero-txt {
 
   .hero-work:after {
@@ -17,7 +32,7 @@
 
 .btn-main {
     color: #fff;
-    background-color: #FF5006;
+    background-color: #9e3205;
     border-color: #FF5006;
 }
 
@@ -38,3 +53,5 @@
 }
 
 .copy-trans { opacity: 0; }
+
+.navbar-nav > li > a { font-size: 1.75rem; }

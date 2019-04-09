@@ -1,11 +1,17 @@
+import CurrentProject from "./modules/FeaturedProject.js";
+
 const halvasVM = {
     vm : new Vue({
-        el : "#app",
+       // el : "#app",
 
         data : {
             welcomeMessage : "Hello!",
 
             portfolioItems : []
+        },
+
+        mounted: function() {
+            this.retrievePortfolioImages('getAll', this.renderPortfolioImages);
         },
 
         methods : {
@@ -18,7 +24,7 @@ const halvasVM = {
             
                 // try a promise here after jquery ajax call is working
                 $.ajax({
-                  url  : 'admin/portfolioContent.php',
+                  url  : 'admin/index.php',
                   type : 'GET',
                   data : { $tableName : 'portfolio' }
                 })
@@ -43,19 +49,12 @@ const halvasVM = {
                     halvasVM.vm.portfolioItems.push(item);
                 });
                 // initShuffle lives in script.js
-                initShuffle();
-            },
-            
-            init : function(cb) {
-                // stub
-                console.log('welcome');
-            
-                this.retrievePortfolioImages('getAll', this.renderPortfolioImages);
-
-                // if (cb) {
-                //     cb();
-                // }
+                //initShuffle();
             }
+        },
+
+        components: {
+            heroproject: CurrentProject
         }
-    }) // end vue VM
+    }).$mount("#app") // end vue VM
 };

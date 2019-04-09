@@ -32,20 +32,7 @@
 	</head>
 
 	<body data-spy="scroll" data-target=".main-nav">
-
-		<!-- template for portfolio stuff -->
-		<template id="portTemplate">
-			<figure class="col-12@sm portfolio-item" data-groups='["print"]'>
-				<img src="photos/portfolio.jpg" alt=""/>
-				<figcaption>
-					<h2>Nice <span>Lily</span></h2>
-					<p>Lily likes to play with crayons and pencils</p>
-					<a href="#" class="btn btn-main"><i class="fa fa-link"></i> View more</a>
-				</figcaption>
-			</figure>
-		</template>
-		<!-- end template -->
-
+		<main id="app">
 		<header class="st-navbar">
 			<nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
 				<div class="container"><!-- Brand and toggle get grouped for better mobile display -->
@@ -101,10 +88,16 @@
 						</div>
 						<div class="row mb90">
 							<div class="col-md-6">
-								<p>Sure, templates and out-of-the-box solutions can get you up and running on the web. That's why there's a veritable sea of sameness when you're surfing for solutions. We believe that it takes skill and expertise to set you apart from the rest - which is why we hand-craft solutions with decades of expertise to draw on. Yes, we use frameworks and all the latest industry tools. But they're just tools. We turn your creative vision into projects that truly stand out with meticulous attention paid to the smallest details.</p>
+								<p>
+									Sure, templates and out-of-the-box solutions can get you up and running on the web. That's why there's a veritable sea of sameness when you're surfing for solutions. We believe that it takes skill and expertise to set you apart from the rest - which is why we hand-craft solutions with decades of expertise to draw on. Yes, we use frameworks and all the latest industry tools. But they're <i>just tools</i>.
+								</p>
+
+								<p>
+									We turn your creative vision into projects that truly stand out with meticulous attention paid to the smallest details.
+								</p>
 							</div>
 							<div class="col-md-6">
-								<img src="photos/about.jpg" alt="" class="img-responsive">
+								<img src="images/kristian-strand-791607-unsplash.jpg" alt="" class="img-responsive">
 							</div>
 						</div>
 					</div>
@@ -160,18 +153,7 @@
 		</section>
 
 		<section class="features-desc">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5">
-						<img src="photos/feature.png" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-7">
-						<h3 class="bottom-line">FEATURE PROJECT OF THE MONTH</h3>
-						<p>Graeci decore metrodorus conturbamur nostri alii veniamus temperantia audivi, discidia optari pariter formidines nimis dissidens quosvis epicureis, iustitia inbecilloque cognoscerem remotis solet duce pondere, stoicos amaret, faciam sic reperiuntur, timeam dedocere spatio censet cernantur dicas miseram alienum. Attico fonte errem neque, causam nimium reliqui fana, duo sane consequi quos cogitarent dicant profecto.</p>
-						<a href="#" class="btn btn-main btn-lg">Project Details</a>
-					</div>
-				</div>
-			</div>
+			<heroproject></heroproject>
 		</section>
 
 		<section class="portfolio" id="portfolio">
@@ -193,7 +175,7 @@
 							</form><!-- #filter -->
 						</div><!-- .filter .mb40 -->
 
-						<div id="app">
+						<div>
 							<div class="grid portfolio-container">
 								<figure  v-for="item in portfolioItems" class="portfolio-item" :data-groups="'[' + item.category + ']'"> 
 									<img :src="'images/portThumbs/' + item.path + '.jpg'" alt=""/>
@@ -210,14 +192,11 @@
 			</div>
 		</section>
 
-		<section class="clients">
+		<!-- <section class="clients">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<!-- <div class="section-title st-center">
-							<h3>Some Of our clients</h3>
-							<p>Avocent deditum long</p>
-						</div> -->
+						
 						<ul class="clients-carousel">
 							<li><img src="photos/client.png" class="img-responsive" alt=""></li>
 							<li><img src="photos/client2.png" class="img-responsive" alt=""></li>
@@ -232,7 +211,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<section class="testimonials">
 			<div class="container">
@@ -307,6 +286,7 @@
 				</div>
 			</div>
 		</section>
+		</main>
 
 		<footer class="site-footer">
 			<div class="container">
@@ -335,11 +315,8 @@
 		<script src="js/owl.carousel.js"></script>
 		<script src="js/jquery.ajaxchimp.min.js"></script>
 		<script src="js/script.js"></script>
-		<script src="js/modules/main_VM.js"></script>
-		<!-- <script src="js/modules/main.js"></script> -->
 
-		<script>
-			halvasVM.vm.init();
-		</script>
+		<!-- include the vm-->
+		<script type="module" src="js/main_VM.js"></script>
 	</body>
 </html>
