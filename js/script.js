@@ -42,7 +42,7 @@ $(function () {
 
 
 
-    function home_height () {
+  function home_height () {
 		var element = $('.st-home-unit'),
 			elemHeight = element.height(),
 			winHeight = $(window).height()
@@ -53,6 +53,7 @@ $(function () {
 		};
 		element.css('padding', padding+'px 0');
 	}
+	
 	home_height ();
 
 	$(window).resize(function () {
@@ -125,101 +126,101 @@ $(function () {
 	/*
      * Contact Form Validation Code
      */
-    function checkEmpty(selector) {
-        if (selector.val()=="" || selector.val()==selector.prop("placeholder")) {
-          selector.addClass('formFieldError',500);
-          return false;
-        } else {
-          selector.removeClass('formFieldError',500);
-          return true;
-        }
-    }
-    function validateEmail(email) {
-        var regex = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
-        if (!regex.test(email.val())) {
-          email.addClass('formFieldError',500);
-          return false;
-        } else {
-          email.removeClass('formFieldError',500);
-          return true;
-        }
-    }
+    // function checkEmpty(selector) {
+    //     if (selector.val()=="" || selector.val()==selector.prop("placeholder")) {
+    //       selector.addClass('formFieldError',500);
+    //       return false;
+    //     } else {
+    //       selector.removeClass('formFieldError',500);
+    //       return true;
+    //     }
+    // }
+    // function validateEmail(email) {
+    //     var regex = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+    //     if (!regex.test(email.val())) {
+    //       email.addClass('formFieldError',500);
+    //       return false;
+    //     } else {
+    //       email.removeClass('formFieldError',500);
+    //       return true;
+    //     }
+    // }
 
-    $('.contact-form').submit(function () {
-      var $this = $(this),
-          result = true;
+//     $('.contact-form').submit(function () {
+//       var $this = $(this),
+//           result = true;
 
-      if(!checkEmpty($this.find('#fname'))){
-        result=false;
-      }
-      if(!validateEmail($this.find('#email'))) {
-        result=false;
-      }
-      if(!checkEmpty($this.find('#mssg'))) {
-        result=false;
-      }
+//       if(!checkEmpty($this.find('#fname'))){
+//         result=false;
+//       }
+//       if(!validateEmail($this.find('#email'))) {
+//         result=false;
+//       }
+//       if(!checkEmpty($this.find('#mssg'))) {
+//         result=false;
+//       }
 
-      if(result==false) {
-        return false;
-      }
+//       if(result==false) {
+//         return false;
+//       }
 
-      var $btn = $("#send").button('loading');
+//       var $btn = $("#send").button('loading');
 
-      var data = $this.serialize();
+//       var data = $this.serialize();
 
-      $.ajax({
-          url: "sender.php",
-          type: "POST",
-          data: data,
-          cache: false,
-          success: function (html) {
-          	console.log(html);
-              if (html==1) {
-                  $('#result-message').addClass('alert alert-success').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success!</strong> Message Sent. We will contact you shortly.').delay(500).slideDown(500).delay(5000).slideUp('slow');
+//       $.ajax({
+//           url: "sender.php",
+//           type: "POST",
+//           data: data,
+//           cache: false,
+//           success: function (html) {
+//           	console.log(html);
+//               if (html==1) {
+//                   $('#result-message').addClass('alert alert-success').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success!</strong> Message Sent. We will contact you shortly.').delay(500).slideDown(500).delay(5000).slideUp('slow');
 
-									$('#fname, #email, #mssg, #subj').val(null);
+// 									$('#fname, #email, #mssg, #subj').val(null);
 
-                  $btn.button('reset');
+//                   $btn.button('reset');
 
-              } else {
-                  $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong>Error Sending Message! Please try again').delay(500).slideDown(500).delay(5000).slideUp('slow');
-                  $btn.button('reset');
-              }
-          },
-          error: function (a, b) {
-            if (b == 'error') {
-              $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Error Sending Message! Please try again.').delay(500).slideDown(500).delay(5000).slideUp('slow');
-            };
-            $btn.button('reset');
-          }
-      });
+//               } else {
+//                   $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong>Error Sending Message! Please try again').delay(500).slideDown(500).delay(5000).slideUp('slow');
+//                   $btn.button('reset');
+//               }
+//           },
+//           error: function (a, b) {
+//             if (b == 'error') {
+//               $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Error Sending Message! Please try again.').delay(500).slideDown(500).delay(5000).slideUp('slow');
+//             };
+//             $btn.button('reset');
+//           }
+//       });
 
-      return false;
-    });
+//       return false;
+//     });
 
 
-});
+// });
 
-// this has to come out and go into the halvasVM init function
+// // this has to come out and go into the halvasVM init function
 
-$(window).load(function () {
-	var $grid = $('.grid'),
-		$sizer = $grid.find('.shuffle__sizer'),
-		$filterType = $('#filter input[name="filter"]');
+// $(window).load(function () {
+// 	var $grid = $('.grid'),
+// 		$sizer = $grid.find('.shuffle__sizer'),
+// 		$filterType = $('#filter input[name="filter"]');
 
-	$grid.shuffle({
-		itemSelector: '.portfolio-item',
-		sizer: $sizer
-	});
+// 	$grid.shuffle({
+// 		itemSelector: '.portfolio-item',
+// 		sizer: $sizer
+// 	});
 
-	$filterType.change(function(e) {
-		var group = $('#filter input[name="filter"]:checked').val();
+// 	$filterType.change(function(e) {
+// 		var group = $('#filter input[name="filter"]:checked').val();
 
-		$grid.shuffle('shuffle', group);
+// 		$grid.shuffle('shuffle', group);
 
-		$('label.btn-main').removeClass('btn-main');
-		$('input[name="filter"]:checked').parent().addClass('btn-main');
-	});
+// 		$('label.btn-main').removeClass('btn-main');
+// 		$('input[name="filter"]:checked').parent().addClass('btn-main');
+// 	});
 });
 
 // make the shuffle init public and use it as the CB from the VM init function

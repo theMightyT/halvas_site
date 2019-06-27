@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require_once('config.php');
 
 function connect($config) {
 	// return the pdo connection
@@ -8,7 +8,7 @@ function connect($config) {
     	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     	$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-		return $conn;
+        return $conn;
 
 	} catch (Exception $e) {
 		echo 'ERROR: ' . $e->getMessage();
