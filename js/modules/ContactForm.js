@@ -78,62 +78,62 @@ export default {
 
             if (result == false) {
                 return false;
+            }
 
-                let $btn = $("#send").button("loading");
+            let $btn = $("#send").button("loading");
 
-                let data = $this.serialize();
+            let data = $this.serialize();
 
-                $.ajax({
-                    url: "../utils/sender.php",
-                    type: "POST",
-                    data: data,
-                    cache: false,
-                    success: function (html) {
-                        console.log(html);
-                        if (html == 1) {
-                            $("#result-message")
-                                .addClass("alert alert-success")
-                                .html(
-                                    '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success!</strong> Message Sent. We will contact you shortly.'
-                                )
-                                .delay(500)
-                                .slideDown(500)
-                                .delay(5000)
-                                .slideUp("slow");
-                            $("#fname, #email, #mssg, #subj").val(null);
+            $.ajax({
+                url: "sender.php",
+                type: "POST",
+                data: data,
+                cache: false,
+                success: function (html) {
+                    console.log(html);
+                    if (html == 1) {
+                        $("#result-message")
+                            .addClass("alert alert-success")
+                            .html(
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success!</strong> Message Sent. We will contact you shortly.'
+                            )
+                            .delay(500)
+                            .slideDown(500)
+                            .delay(5000)
+                            .slideUp("slow");
+                        $("#fname, #email, #mssg, #subj").val(null);
 
-                            $btn.button("reset");
-                        } else {
-                            $("#result-message")
-                                .addClass("alert alert-danger")
-                                .html(
-                                    '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong>Error Sending Message! Please try again'
-                                )
-                                .delay(500)
-                                .slideDown(500)
-                                .delay(5000)
-                                .slideUp("slow");
-                            $btn.button("reset");
-                        }
-                    },
-                    error: function (a, b) {
-                        if (b == "error") {
-                            $("#result-message")
-                                .addClass("alert alert-danger")
-                                .html(
-                                    '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Error Sending Message! Please try again.'
-                                )
-                                .delay(500)
-                                .slideDown(500)
-                                .delay(5000)
-                                .slideUp("slow");
-                        }
+                        $btn.button("reset");
+                    } else {
+                        $("#result-message")
+                            .addClass("alert alert-danger")
+                            .html(
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong>Error Sending Message! Please try again'
+                            )
+                            .delay(500)
+                            .slideDown(500)
+                            .delay(5000)
+                            .slideUp("slow");
                         $btn.button("reset");
                     }
-                });
+                },
+                error: function (a, b) {
+                    if (b == "error") {
+                        $("#result-message")
+                            .addClass("alert alert-danger")
+                            .html(
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Error Sending Message! Please try again.'
+                            )
+                            .delay(500)
+                            .slideDown(500)
+                            .delay(5000)
+                            .slideUp("slow");
+                    }
+                    $btn.button("reset");
+                }
+            });
 
-                return false;
-            }
+            return false;
         }
     }
 };

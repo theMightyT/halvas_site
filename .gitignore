@@ -1,3 +1,4 @@
 node_modules
 layered
 *.psd
+.sass-cache
