@@ -1,4 +1,5 @@
 import CurrentProject from "./modules/FeaturedProject.js";
+import ContactForm from "./modules/ContactForm.js";
 
 const halvasVM = {
     vm : new Vue({
@@ -26,7 +27,7 @@ const halvasVM = {
                 $.ajax({
                   url  : 'admin/index.php',
                   type : 'GET',
-                  data : { $tableName : 'portfolio' }
+                  data : { tableName : 'portfolio' }
                 })
             
                 .done(function(data) {
@@ -43,18 +44,22 @@ const halvasVM = {
                 });
             },
 
-            renderPortfolioImages(data) {            
+            renderPortfolioImages(data) { 
+                debugger;
+                
+                this.portfolioItems = data;
                 // push the ajax result into the portfolio VM data object
-                data.forEach(function(item, index) {
-                    halvasVM.vm.portfolioItems.push(item);
-                });
+                // data.forEach(function(item, index) {
+                //    this.portfolioItems.push(data);
+                // });
                 // initShuffle lives in script.js
                 //initShuffle();
             }
         },
 
         components: {
-            heroproject: CurrentProject
+            heroproject: CurrentProject,
+            contactform: ContactForm
         }
     }).$mount("#app") // end vue VM
 };

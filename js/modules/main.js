@@ -11,7 +11,7 @@ var halvas = {
     $.ajax({
       url  : 'admin/portfolioContent.php',
       type : 'GET',
-      data : { $tableName : 'portfolio' }
+      data : { tableName : 'portfolio' }
     })
 
     .done(function(data) {
