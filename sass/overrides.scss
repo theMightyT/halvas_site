@@ -87,10 +87,16 @@
 
 .lightbox { 
   position: fixed; 
-  top: 60px; 
+  top: 60px;
+  padding-left: 20px;
+  padding-top: 20px; 
   width: 100%; 
   height: 100vh; 
   background-color: rgba(0,0,0,0.9);
+  color: white;
+  z-index: 5000;
+
+  h1, h2, h3, h4, h5, h6 { color: inherit; }
 }
 
 .lightbox-close {
@@ -100,5 +106,14 @@
   font-size: 2em;
   width: 30px; 
   margin-left: auto;
-  top: 10px;   
+  margin-bottom: 20px;
+  z-index: 100;  
+}
+
+.lightbox-img { max-width: 100% }
+
+.hr-truncate { 
+  max-width: 75%;
+  margin-left: 0;
+  margin-top: 0;
 }

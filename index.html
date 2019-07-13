@@ -239,9 +239,8 @@
 			<contactform></contactform>
 		</section>
 
-		<section v-if="showLightbox" class="lightbox">
-			<div class="lightbox-close" @click="closeLightbox">x</div>
-		</section>
+		<lightbox v-if="showLightbox" class="lightbox" :content="lightboxContent" @lightboxclose="closeLightbox">
+		</lightbox>
 	</main>
 
 	<footer class="site-footer">

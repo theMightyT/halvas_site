@@ -1,6 +1,7 @@
 import CurrentProject from "./modules/FeaturedProject.js";
 import ContactForm from "./modules/ContactForm.js";
 import PortfolioComponent from "./modules/PortfolioComponent.js";
+import LightboxComponent from "./modules/LightboxComponent.js";
 
 const halvasVM = {
     vm: new Vue({
@@ -30,7 +31,8 @@ const halvasVM = {
         components: {
             heroproject: CurrentProject,
             contactform: ContactForm,
-            portfolio: PortfolioComponent
+            portfolio: PortfolioComponent,
+            lightbox: LightboxComponent
         }
     }).$mount("#app") // end vue VM
 };

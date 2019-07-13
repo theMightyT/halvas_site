@@ -24,8 +24,10 @@ export default {
                     </form><!-- #filter -->
                 </div><!-- .filter .mb40 -->
 
-                <!-- portfolio item template -->
-                <portitem v-for="item in portfolioItems" :item="item" :key="item.id" @popwindow="loadlightbox"></portitem>
+                <div class="grid portfolio-container">
+                    <!-- portfolio item template -->
+                    <portitem v-for="item in portfolioItems" :item="item" :key="item.id" @popwindow="loadlightbox"></portitem>
+                </div>
 
             </div>
         </div>
