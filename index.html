@@ -48,7 +48,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#"><img src="photos/logo3.png" alt="" class="img-responsive"></a>
+						<!-- <a class="navbar-brand" href="#"><img src="photos/logo3.png" alt="" class="img-responsive"></a> -->
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -107,6 +107,15 @@
 								<p>
 									We turn your creative vision into projects that truly stand out with meticulous
 									attention paid to the smallest details.
+								</p>
+
+								<p>
+									<span>
+										<a href="#contact" @click.prevent="scrollToTarget">
+											Get in touch
+										</a>
+									</span>
+									to experience the difference.
 								</p>
 							</div>
 							<div class="col-md-6">
@@ -172,7 +181,7 @@
 		</section>
 
 		<section class="features-desc">
-			<heroproject></heroproject>
+			<heroproject @firelightbox="openlightbox"></heroproject>
 		</section>
 
 		<section class="portfolio" id="portfolio">
@@ -243,7 +252,7 @@
 		</lightbox>
 	</main>
 
-	<footer class="site-footer">
+	<footer class="site-footer">a
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 copy-trans">

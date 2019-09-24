@@ -2,7 +2,7 @@
 
 	function getFeaturedProject($tableName, $conn) {
 		try {
-			$result = $conn->query("SELECT * FROM $tableName WHERE feature=1");
+			$result = $conn->query("SELECT * FROM portfolio.devtools WHERE projectref = 5");
 			return ($result->rowCount() > 0) ? $result : false;
 		} catch (Exception $e) {
 			return $e->getMessage();

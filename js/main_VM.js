@@ -15,6 +15,7 @@ const halvasVM = {
 
         methods: {
             openlightbox(item) {
+                debugger;
                 // open the lightbox with target info
                 this.lightboxContent = item;
 
@@ -24,6 +25,15 @@ const halvasVM = {
             closeLightbox() {
                 this.showLightbox = false;
                 this.lightboxContent = {};
+            },
+
+            scrollToTarget(event) {
+                let scrollTarget = event.currentTarget.getAttribute('href');
+
+                window.scrollTo({
+                    top: document.querySelector(`${scrollTarget}`).offsetTop,
+                    behavior: 'smooth'
+                })
             }
 
         },

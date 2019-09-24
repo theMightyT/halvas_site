@@ -16,13 +16,13 @@ export default {
                 <p>
                     {{ currentProject.description }}
                 </p>
-                <a href="#" class="btn btn-main btn-lg">Project Details</a>
+                <a href="#" @click.prevent="poplightbox" class="btn btn-main btn-lg">Project Details</a>
             </div>
         </div>
     </div>
     `,
 
-    data: function() {
+    data: function () {
         return {
             msg: "this is the hero template",
 
@@ -30,7 +30,7 @@ export default {
         }
     },
 
-    created: function() {
+    created: function () {
         console.log('sup, yo. I am the featured project component');
 
         const url = `./admin/index.php?tableName=portfolio&&feature=true`;
@@ -38,8 +38,14 @@ export default {
         fetch(url)
             .then(res => res.json())
             .then(data => this.currentProject = data)
-        .catch(function(error) {
-            console.log(error);
-        });
+            .catch(function (error) {
+                console.log(error);
+            });
+    },
+
+    methods: {
+        poplightbox() {
+            this.$emit('firelightbox', this.currentProject);
+        }
     }
 }
