@@ -1,6 +1,8 @@
 export default {
     props: ["item"],
 
+    // TODO => add a srcset to handle mobile image sizes
+
     template: `    
         <figure class="portfolio-item"
             :data-groups="'[' + item.category + ']'">

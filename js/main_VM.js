@@ -3,7 +3,7 @@ import ContactForm from "./modules/ContactForm.js";
 import PortfolioComponent from "./modules/PortfolioComponent.js";
 import LightboxComponent from "./modules/LightboxComponent.js";
 
-const halvasVM = {
+const halvasVM = (() => {
     vm: new Vue({
         // el : "#app",
 
@@ -45,4 +45,4 @@ const halvasVM = {
             lightbox: LightboxComponent
         }
     }).$mount("#app") // end vue VM
-};
+})();
