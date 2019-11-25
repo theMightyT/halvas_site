@@ -1,47 +1,12 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<path style="fill:#FF6849;" d="M512,512H0V0h512V512z"/>
-<path style="fill:#FD4B2D;" d="M512,512H256V0h256V512z"/>
-<path style="fill:#A10101;" d="M482,482H30V30h452V482z"/>
-<path style="fill:#7F0101;" d="M482,482H256V30h226V482z"/>
-<path style="fill:#FF6849;" d="M170.622,181.6h29.28l64.8,170.4h-34.08l-15.84-42.48h-59.52l-15.6,42.48h-34.08L170.622,181.6z
-	 M208.782,286.24l-23.52-66.96l-24.48,66.96H208.782z"/>
-<g>
-	<path style="fill:#FD4B2D;" d="M397.181,352h-32.16v-70.56c0-20.107-7.854-29.04-19.92-29.04c-21.768,0-31.522,22.32-32.64,26.16
-		V352h-32.16V226.24h29.04v23.28c4.639-7.999,18.492-25.44,49.92-25.44c30.572,0,37.92,24.253,37.92,49.44L397.181,352L397.181,352z
-		"/>
-	<polygon style="fill:#FD4B2D;" points="256,329.118 256,352 264.702,352 	"/>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>animate</title>
+  <path d="M512,512H0V0H512Z" fill="#ff6849"/>
+  <path d="M512,512H256V0H512Z" fill="#fd4b2d"/>
+  <path d="M482,482H30V30H482Z" fill="#a10101"/>
+  <path d="M482,482H256V30H482Z" fill="#7f0101"/>
+  <path d="M170.62,181.6H199.9L264.7,352H230.62l-15.84-42.48H155.26L139.66,352H105.58Zm38.16,104.64-23.52-67-24.48,67Z" fill="#ff6849"/>
+  <g>
+    <path d="M397.18,352H365V281.44c0-20.11-7.85-29-19.92-29-21.77,0-31.52,22.32-32.64,26.16V352H280.3V226.24h29v23.28c4.64-8,18.49-25.44,49.92-25.44,30.57,0,37.92,24.25,37.92,49.44V352Z" fill="#fd4b2d"/>
+    <polygon points="256 329.12 256 352 264.7 352 256 329.12" fill="#fd4b2d"/>
+  </g>
 </svg>

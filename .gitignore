@@ -1,4 +1,1 @@
-node_modules
-layered
-*.psd
-.sass-cache
+.DS_Store
