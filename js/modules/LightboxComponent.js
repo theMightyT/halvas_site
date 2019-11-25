@@ -25,7 +25,7 @@ export default {
                 <h3>Tools Used</h3>
                 <ul v-if="content.tools" class="dev-tools">
                     <li v-for="tool in content.tools">
-                        <img :src="'images/' + tool.path + '.png'" :alt="tool.toolname">
+                        <img :src="'images/tools/' + tool.path + '.svg'" :alt="tool.toolname">
                     </li>
                 </ul>
             </div>
