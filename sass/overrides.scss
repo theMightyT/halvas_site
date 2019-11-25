@@ -97,6 +97,15 @@
   z-index: 5000;
 
   h1, h2, h3, h4, h5, h6 { color: inherit; }
+
+  
+
+  ul { 
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    li { flex: 1; }
+  }
 }
 
 .lightbox-close {

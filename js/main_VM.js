@@ -3,6 +3,8 @@ import ContactForm from "./modules/ContactForm.js";
 import PortfolioComponent from "./modules/PortfolioComponent.js";
 import LightboxComponent from "./modules/LightboxComponent.js";
 
+document.addEventListener('mousewheel', function () { }, { passive: false })
+
 const halvasVM = (() => {
     vm: new Vue({
         // el : "#app",
@@ -15,7 +17,7 @@ const halvasVM = (() => {
 
         methods: {
             openlightbox(item) {
-                debugger;
+                // debugger;
                 // open the lightbox with target info
                 this.lightboxContent = item;
 

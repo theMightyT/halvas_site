@@ -21,12 +21,14 @@ export default {
             <p class="lightbox-desc">{{ content.description }}</p>
 
             <hr class="hr-truncate">
-            <h3>Tools Used</h3>
-            <ul class="dev-tools">
-                <li v-for="tools in content">
-                    <img :src="'images/' + tool.path" alt="{tool.toolname"}
-                </li>
-            </ul>
+            <div class="tools-wrapper" v-if="content.tools">
+                <h3>Tools Used</h3>
+                <ul v-if="content.tools" class="dev-tools">
+                    <li v-for="tool in content.tools">
+                        <img :src="'images/' + tool.path + '.png'" :alt="tool.toolname">
+                    </li>
+                </ul>
+            </div>
 
         </article>
     </section>

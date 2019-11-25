@@ -15,5 +15,4 @@ function connect($config) {
 		return false;
 	}
 }
-
 ?>

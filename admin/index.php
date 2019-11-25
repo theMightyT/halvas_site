@@ -10,10 +10,11 @@
 
     if (isset($_GET['feature'])) {
         $result = getFeaturedProject($table, $conn);
-        echo json_encode($result->fetch(PDO::FETCH_ASSOC));
+        //echo json_encode($result->fetch(PDO::FETCH_ASSOC));
+        echo json_encode($result);
 
     } else {
         $result = getPortfolioContent($table, $conn);
-        echo json_encode($result->fetchAll());
+        echo json_encode($result); //$result->fetchAll()
     }
 ?>
