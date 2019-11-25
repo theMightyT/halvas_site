@@ -22,6 +22,7 @@ const halvasVM = (() => {
                 this.lightboxContent = item;
 
                 this.showLightbox = true;
+                document.body.classList.add('block-scroll');
             },
 
             closeLightbox() {

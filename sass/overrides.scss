@@ -8,6 +8,8 @@
   background-size: cover, cover;
 }
 
+.block-scroll { overflow: hidden; }
+
 .home .hero-txt {
   .hero-work:after {
     content: "";
@@ -74,13 +76,25 @@
   font-size: 1.75rem;
 }
 
-.grid figure {
+// .css-grid {
+//   display: grid;
+//   grid-gap: 1rem;
+//   grid-template-columns: repeat(4, 1fr);
+//   min-height: 250px;
+// }
+
+.css-grid { display: flex; flex-wrap: wrap; }
+.port-item { flex: 0 1 auto; width: 30%; padding: 20px; text-align: center; }
+
+.css-grid figure {
   h2 { top: 60px; }
 
   h2::after {
     content: "";
     background: none;
   }
+
+  img { width: 100% }
 
   figcaption > a { top: 130px; bottom: auto }
 }
@@ -90,7 +104,7 @@
   top: 60px;
   padding-left: 20px;
   padding-top: 20px; 
-  width: 100%; 
+  width: 100vw; 
   height: 100vh; 
   background-color: rgba(0,0,0,0.9);
   color: white;
@@ -105,6 +119,7 @@
   ul { 
     list-style-type: none;
     display: flex;
+    align-items: center;
     flex-direction: row;
     li { flex: 0; padding: 0 12px; }
     li:first-of-type { padding-left: 0; }
